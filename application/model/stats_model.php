@@ -1,5 +1,5 @@
 <?
-class Stats_Model extends Model
+class stats_Model extends Model
 {
 
     public function __construct()
@@ -11,7 +11,6 @@ class Stats_Model extends Model
     {
         $sth = $this->db->prepare("SELECT * FROM students");
         $sth->execute();
-
-        return $result = $sth->fetchAll();
+        return $result = $sth->fetchAll(PDO::FETCH_OBJ);
     }
 }

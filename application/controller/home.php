@@ -6,8 +6,7 @@ class Home extends Controller{
         parent::__construct();
     }
     public function index(){
-        $this->model = new Home_Model();
-        $this->view = new View();
+        //$this->model = new Home_Model();
         $this->view->render('home.php', 'template.php',$data);
     }
 }

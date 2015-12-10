@@ -1,6 +1,4 @@
 <?php require_once('head.php');?>
-
-
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,8 +26,9 @@
 
     <div class="starter-template">
         <h1>TESTIQ</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <p class="lead">STUDENTS DESK</p>
     </div>
+    <div><?php include 'application/view/'.$content_view; ?></div>
 
 </div><!-- /.container -->
 

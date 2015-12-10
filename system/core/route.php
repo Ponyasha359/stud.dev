@@ -2,38 +2,39 @@
 class Route
 {
 
-static function start()
+    /**
+     *
+     */
+    static function start()
 {
-// контроллер и действие по умолчанию
+
 $controller_name = 'home';
 $action_name = 'index';
 
 $routes = explode('/', $_SERVER['REQUEST_URI']);
 
-// получаем имя контроллера
 if ( !empty($routes[1]) )
 {
 $controller_name = $routes[1];
 }
 
-// получаем имя экшена
 if ( !empty($routes[2]) )
 {
 $action_name = $routes[2];
 }
 
-// создаем контроллер
-
+$modelName =     $controller_name .'_Model';
 $controller = new $controller_name;
+$model = new $modelName;
 $action = $action_name;
 if(method_exists($controller, $action))
 {
-// вызываем действие контроллера
+$controller->model= new $modelName;
 $controller->$action();
 }
 else
 {
-// здесь также разумнее было бы кинуть исключение
+    //todo
 }
 
 }
